@@ -1,4 +1,5 @@
 import "./App.css";
+import chef from "./images/chef.jpg";
 
 function Header({ name }) {
   return (
@@ -22,15 +23,28 @@ const dishObjects = items.map((dish, idx) => ({
 
 function Main({ dishes }) {
   return (
-    <ul>
-      {dishes.length > 0
-        ? dishes.map((dish) => (
-            <li key={dish.id} style={{ listStyle: "none" }}>
-              {dish.title}
-            </li>
-          ))
-        : ""}
-    </ul>
+    <>
+      <div>
+        <h2>Welcome to this beautiful restaurant!</h2>
+      </div>
+
+      <main>
+        <img src={chef} height={200} alt="a photo of a chef" />
+        <ul
+          style={{
+            padding: 0,
+          }}
+        >
+          {dishes.length > 0
+            ? dishes.map((dish) => (
+                <li key={dish.id} style={{ listStyle: "none" }}>
+                  {dish.title}
+                </li>
+              ))
+            : ""}
+        </ul>
+      </main>
+    </>
   );
 }
 
