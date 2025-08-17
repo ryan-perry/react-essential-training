@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import chef from "./images/chef.jpg";
 
@@ -49,8 +50,14 @@ function Main({ dishes }) {
 }
 
 function App() {
+  const [status, setStatus] = useState(true);
+
   return (
     <>
+      <h1>The restaurant is currently {status ? "open" : "closed"}</h1>
+      <button onClick={() => setStatus(!status)}>
+        {status ? "Close" : "Open"} Restaurant
+      </button>
       <Header name="Homer" />
       <Main dishes={dishObjects} />
     </>
