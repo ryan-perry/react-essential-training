@@ -8,15 +8,25 @@ function Header({ name }) {
   );
 }
 
-const items = ["Macaroni and Cheese", "Salmon with Potatoes", "Pizza"];
+const items = [
+  "Macaroni and Cheese",
+  "Salmon with Potatoes",
+  "Pizza",
+  "Cheeseburger",
+];
+
+const dishObjects = items.map((dish, idx) => ({
+  id: idx,
+  title: dish,
+}));
 
 function Main({ dishes }) {
   return (
     <ul>
       {dishes.length > 0
-        ? dishes.map((dish, idx) => (
-            <li key={idx} style={{ listStyle: "none" }}>
-              {dish}
+        ? dishes.map((dish) => (
+            <li key={dish.id} style={{ listStyle: "none" }}>
+              {dish.title}
             </li>
           ))
         : ""}
@@ -28,7 +38,7 @@ function App() {
   return (
     <>
       <Header name="Homer" />
-      <Main dishes={items} />
+      <Main dishes={dishObjects} />
     </>
   );
 }
