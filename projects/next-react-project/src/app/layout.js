@@ -32,6 +32,9 @@ function Header() {
           <div className="flex items-center">
             <Link href="/hotels">Hotels</Link>
           </div>
+          <div className="flex items-center">
+            <Link href="/contact">Contact</Link>
+          </div>
         </nav>
       </div>
     </header>
